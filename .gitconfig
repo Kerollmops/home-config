@@ -1,0 +1,16 @@
+[user]
+	name = Kerosene2000
+	email = renault.cle@gmail.com
+	password = ac6hbe64
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
+[credential]
+	helper = osxkeychain
+[receive]
+	denyCurrentBranch = ignore
+[core]
+	excludesfile = /Users/crenault/.gitignore
+[push]
+	default = matching
