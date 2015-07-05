@@ -6,15 +6,66 @@
 #(_)____|____/|_| |_|_| \_\\____|
 #
 
-# select history file
+# env variables
 export HISTFILE=~/.zsh_history
 export HISTSIZE=2000
 export SAVEHIST=$HISTSIZE
+export GREP_COLOR=31
+export PATH=$PATH:$HOME/bin
+export EDITOR="subl -w"
+
+# aliases
+alias ls='ls -G'
+alias ll='ls -G -lah'
+alias lll='ls -G -lah | less'
+alias grep='grep --color=auto'
+alias subl='subl'
+
+# frequently used directories
+setopt auto_cd
+cdpath=("$HOME/Dropbox/42 jobs")
+
+# directory stack
+export DIRSTACKSIZE=8
+setopt autopushd pushdminus pushdsilent pushdtohome
+
+# completion
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 
-# subl alias
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+# my prompt
+setopt PROMPT_SUBST
+function git_branch {
+	local branch=$(git symbolic-ref -q --short HEAD 2> /dev/null)
+	if [[ ! -z $branch ]] then
+		echo $branch" "
+	fi
+}
+function get_pwd {
+	echo "%20<...<%c%<<"
+}
+export PROMPT='%F{red}%(?..%? )'\
+'%F{white}%B%(2L.+ .)%(1j.[%j] .)'\
+'%F{cyan}%m:%f '\
+'%F{green}$(git_branch)'\
+'%F{yellow}$(get_pwd)%f; '
+
+# export PROMPT='%K{white}%F{red}%(?..(%?%))'\
+# '%K{black}%F{white}%B%(2L.+.)%(1j.[%j].)'\
+# '%K{yellow}%F{black}%n%F{white}'\
+# '%K{green}%F{white}$(current_git_branch)'\
+# '%K{black}%F{yellow} $(get_pwd) '\
+# '%f%k%b'\
+# '# '
+
+# corrupt_history
+function corrupt_history() {
+
+	mv ~/.zsh_history ~/.zsh_history_bad
+	strings ~/.zsh_history_bad > ~/.zsh_history
+	fc -R ~/.zsh_history
+	rm ~/.zsh_history_bad
+}
 
 # fn + delete
 bindkey '\e[3~' delete-char
@@ -26,24 +77,8 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^[e" edit-command-line
 
-# 42 special infos
-export STUDENTS42="crenault:yderosie"
-function get_students_hosts() {
-
-    #local students=$(echo $STUDENTS42 | tr ":" " ")
-    for s in $(echo $STUDENTS42 | tr ":" " "); do
-       echo $s
-    done
-}
-
-# is brew up to date ? (good?)
-#(brew update > /dev/null) &
-
-# custom prompt
-source ~/.prompt.zsh
-
-# Complétion
-fpath=(/usr/local/Cellar/zsh-completions/0.11.0/share/zsh-completions $fpath)
+# Completion
+fpath=($HOME/.brew/share/zsh/site-functions $HOME/.brew/share/zsh-completions $fpath)
 autoload -U compinit
 compinit
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
@@ -68,31 +103,5 @@ zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
 # Correction des commandes
 setopt correctall
 
-# Un petit prompt sympa
-#autoload -U promptinit
-#promptinit
-#prompt pws
-
-# Les alias marchent comme sous bash
-alias ls='ls -G'
-alias ll='ls -G -lah'
-alias lll='ls -G -lah | less'
-
-# marre de se faire corriger par zsh ;)
-alias xs='cd'
-alias sl='ls'
-
-# mplayer en plein framme buffer ;)
-alias mplayerfb='mplayer -vo fbdev -vf scale=1024:768'
-# Un grep avec des couleurs :
-export GREP_COLOR=31
-alias grep='grep --color=auto'
-alias xte='nohup xterm &' # xte lancera un xterm qui ne se fermera pas si on ferme le terminal
-
-# Pareil pour les variables d'environement :
-#export http_proxy="http://hostname:8080/"
-#export HTTP_PROXY=$http_proxy
-# un VRAI éditeur de texte ;)
-export EDITOR=/usr/bin/emacs
-
+# live command color
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
