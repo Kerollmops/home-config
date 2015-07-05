@@ -44,11 +44,19 @@ function git_branch {
 function get_pwd {
 	echo "%20<...<%c%<<"
 }
+function need_commit {
+	if [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] then
+		echo "%F{red};%f"
+	else
+		echo "%F{white};%f"
+	fi
+}
 export PROMPT='%F{red}%(?..%? )'\
 '%F{white}%B%(2L.+ .)%(1j.[%j] .)'\
 '%F{cyan}%m:%f '\
 '%F{green}$(git_branch)'\
-'%F{yellow}$(get_pwd)%f; '
+'%F{yellow}$(get_pwd)%f'\
+'$(need_commit) '
 
 # export PROMPT='%K{white}%F{red}%(?..(%?%))'\
 # '%K{black}%F{white}%B%(2L.+.)%(1j.[%j].)'\
