@@ -17,6 +17,7 @@ export EDITOR="subl -w"
 # aliases
 alias ls='ls -G'
 alias ll='ls -G -lah'
+alias l='ll'
 alias lll='ls -G -lah | less'
 alias grep='grep --color=auto'
 alias subl='subl'
