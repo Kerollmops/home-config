@@ -13,13 +13,14 @@
 
 		<key>ProgramArguments</key>
 		<array>
-			<string>/Users/crenault/bin/syncthing</string>
+			<string>/nfs/zfs-student-5/users/2013/crenault/.brew/bin/syncthing</string>
+			<string>-no-browser</string>
 		</array>
 
 		<key>EnvironmentVariables</key>
 		<dict>
 			<key>HOME</key>
-			<string>/Users/crenault</string>
+			<string>/nfs/zfs-student-5/users/2013/crenault</string>
 			<key>STNORESTART</key>
 			<string>1</string>
 		</dict>
@@ -34,9 +35,9 @@
 		<string>Background</string>
 
 		<key>StandardOutPath</key>
-		<string>/Users/crenault/Library/Logs/Syncthing.log</string>
+		<string>/nfs/zfs-student-5/users/2013/crenault/Library/Logs/Syncthing.log</string>
 
 		<key>StandardErrorPath</key>
-		<string>/Users/crenault/Library/Logs/Syncthing-Errors.log</string>
+		<string>/nfs/zfs-student-5/users/2013/crenault/Library/Logs/Syncthing-Errors.log</string>
 	</dict>
 </plist>
