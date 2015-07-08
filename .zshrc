@@ -59,14 +59,6 @@ export PROMPT='%F{red}%(?..%? )'\
 '%F{yellow}$(get_pwd)%f'\
 '$(need_commit) '
 
-# export PROMPT='%K{white}%F{red}%(?..(%?%))'\
-# '%K{black}%F{white}%B%(2L.+.)%(1j.[%j].)'\
-# '%K{yellow}%F{black}%n%F{white}'\
-# '%K{green}%F{white}$(current_git_branch)'\
-# '%K{black}%F{yellow} $(get_pwd) '\
-# '%f%k%b'\
-# '# '
-
 # corrupt_history
 function corrupt_history() {
 
