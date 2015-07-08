@@ -1,6 +1,9 @@
 # ssh tunnel from any:2080 to any:80 from pi@31.33.165.211
 ssh -L 2080:localhost:80 pi@31.33.165.211
 
+# some words for fun
+/usr/dict/ || /usr/share/dict/
+
 # get disks infos
 df -h
 
