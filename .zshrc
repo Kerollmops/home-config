@@ -17,13 +17,14 @@ export EDITOR="subl -w"
 # aliases
 alias ls='ls -G'
 alias ll='ls -G -lah'
+alias l='ll'
 alias lll='ls -G -lah | less'
 alias grep='grep --color=auto'
 alias subl='subl'
 
 # frequently used directories
 setopt auto_cd
-cdpath=("$HOME/Dropbox/42 jobs")
+cdpath=("$HOME/Sync/42 jobs")
 
 # directory stack
 export DIRSTACKSIZE=8
