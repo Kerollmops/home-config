@@ -90,6 +90,7 @@ bindkey "^[e" edit-command-line
 fpath=($HOME/.brew/share/zsh/site-functions $HOME/.brew/share/zsh-completions $fpath)
 autoload -U compinit
 compinit
+
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
