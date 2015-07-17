@@ -1,3 +1,6 @@
+# load usb
+sudo mount -t vfat /dev/sda1 . -o umask=0022,gid=pi,uid=pi
+
 # ssh tunnel from any:2080 to any:80 from pi@31.33.165.211
 ssh -L 2080:localhost:80 pi@31.33.165.211
 
