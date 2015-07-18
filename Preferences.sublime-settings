@@ -1,0 +1,44 @@
+{
+	"caret_style": "phase",
+	"close_windows_when_empty": true,
+	"color_scheme": "Packages/User/SublimeLinter/base16-eighties.dark (SL).tmTheme",
+	"draw_white_space": "all",
+	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.o",
+		"*.lib",
+		"*.so",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-workspace"
+	],
+	"font_size": 12,
+	"ignored_packages":
+	[
+		"Vintage",
+		"Makefile"
+	],
+	"remember_full_screen": true,
+	"rulers":
+	[
+		80,
+		20,
+		24,
+		28
+	],
+	"tab_completion": false,
+	"theme": "Spacegray Eighties.sublime-theme",
+	"trim_trailing_white_space_on_save": true
+}
