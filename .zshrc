@@ -21,6 +21,9 @@ alias l='ll'
 alias lll='ls -G -lah | less'
 alias grep='grep --color=auto'
 alias subl='subl'
+alias gs="git status"
+alias gc="git commit -am"
+alias gp="git push"
 
 # frequently used directories
 setopt auto_cd
@@ -107,3 +110,6 @@ setopt correctall
 
 # live command color
 source ~/zsh-syntax-highlighting.zsh
+
+# added by travis gem
+[ -f /Users/crenault/.travis/travis.sh ] && source /Users/crenault/.travis/travis.sh
