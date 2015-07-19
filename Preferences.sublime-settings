@@ -11,8 +11,6 @@
 		"*.exe",
 		"*.dll",
 		"*.o",
-		"*.lib",
-		"*.so",
 		"*.ncb",
 		"*.sdf",
 		"*.suo",
@@ -20,15 +18,13 @@
 		"*.idb",
 		".DS_Store",
 		"*.class",
-		"*.psd",
-		"*.db",
 		"*.sublime-workspace"
 	],
 	"font_size": 12,
 	"ignored_packages":
 	[
-		"Vintage",
-		"Makefile"
+		"Makefile",
+		"Vintage"
 	],
 	"remember_full_screen": true,
 	"rulers":
@@ -40,5 +36,6 @@
 	],
 	"tab_completion": false,
 	"theme": "Spacegray Eighties.sublime-theme",
+	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }

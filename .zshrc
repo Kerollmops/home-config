@@ -82,7 +82,7 @@ zle -N edit-command-line
 bindkey "^[e" edit-command-line
 
 # Completion
-fpath=($HOME/.brew/share/zsh/site-functions $HOME/.brew/share/zsh-completions $fpath)
+fpath=($HOME/completion $HOME/.brew/share/zsh/site-functions $HOME/.brew/share/zsh-completions $fpath)
 autoload -U compinit
 compinit
 
