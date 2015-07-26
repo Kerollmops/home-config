@@ -11,7 +11,7 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=2000
 export SAVEHIST=$HISTSIZE
 export GREP_COLOR=31
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin:$HOME/.gem/ruby/2.2.0/bin
 export EDITOR="subl -w"
 
 # aliases
@@ -24,10 +24,11 @@ alias subl='subl'
 alias gs="git status"
 alias gc="git commit -am"
 alias gp="git push"
+alias ga="git add"
 
 # frequently used directories
 setopt auto_cd
-cdpath=("$HOME/Sync/42 jobs")
+cdpath=("$HOME/Sync/42jobs")
 
 # directory stack
 export DIRSTACKSIZE=8
