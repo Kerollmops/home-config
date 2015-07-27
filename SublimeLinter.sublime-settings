@@ -12,10 +12,10 @@
                 "args": [],
                 "comment": "",
                 "excludes": [],
-                "extra_flags": "-Wall -Wextra -Werror -std=c++1y -stdlib=libc++",
+                "extra_flags": "-Wall -Wextra -Werror",
                 "include_dirs": [
-                    "/Users/crenault/Sync/42jobs/Koruwaru/common",
-                    "/Users/crenault/Sync/42jobs/Koruwaru/common/libft/includes"
+                    "${project_folder}/common",
+                    "${project_folder}/common/libft/includes"
                 ]
             },
             "jsl": {
