@@ -14,6 +14,7 @@
                 "excludes": [],
                 "extra_flags": "-Wall -Wextra -Werror",
                 "include_dirs": [
+                    "${project_folder}/corewar/include",
                     "${project_folder}/common",
                     "${project_folder}/common/libft/includes"
                 ]
