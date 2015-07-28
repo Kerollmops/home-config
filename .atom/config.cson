@@ -1,0 +1,23 @@
+"*":
+  "exception-reporting":
+    userId: "39ae705d-c5d4-1801-ccdb-eeb401b3ee96"
+  welcome:
+    showOnStartup: false
+  editor:
+    invisibles: {}
+    showInvisibles: true
+    showIndentGuide: true
+    tabLength: 4
+    softWrap: true
+  core:
+    projectHome: "/Users/crenault/Sync/42jobs"
+  "linter-rust":
+    cargoPath: "/usr/local/bin/cargo"
+    rustcPath: "/usr/local/bin/rustc"
+  linter:
+    lintOnFly: false
+  "linter-clang":
+    clangDefaultCFlags: "-Wall -Wextra -Werror"
+    clangDefaultCppFlags: "-Wall -Wextra -Werror -std=c++11"
+  minimap:
+    absoluteMode: true

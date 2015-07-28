@@ -29,10 +29,7 @@
 	"remember_full_screen": true,
 	"rulers":
 	[
-		80,
-		20,
-		24,
-		28
+		80
 	],
 	"tab_completion": false,
 	"theme": "Spacegray Eighties.sublime-theme",
