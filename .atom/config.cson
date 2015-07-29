@@ -6,18 +6,34 @@
   editor:
     invisibles: {}
     showInvisibles: true
-    showIndentGuide: true
     tabLength: 4
     softWrap: true
+    scrollPastEnd: true
   core:
-    projectHome: "/Users/crenault/Sync/42jobs"
+    projectHome: "~/Sync/42jobs"
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "*.o"
+    ]
   "linter-rust":
     cargoPath: "/usr/local/bin/cargo"
     rustcPath: "/usr/local/bin/rustc"
-  linter:
-    lintOnFly: false
+  linter: {}
   "linter-clang":
     clangDefaultCFlags: "-Wall -Wextra -Werror"
     clangDefaultCppFlags: "-Wall -Wextra -Werror -std=c++11"
   minimap:
     absoluteMode: true
+  term2: {}
+  "git-diff": {}
+  "tree-view":
+    hideIgnoredNames: true
+  tabs:
+    usePreviewTabs: true
+  "selection-counter":
+    statusString: "Lines: %l"
