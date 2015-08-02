@@ -28,7 +28,7 @@ alias ga="git add"
 
 # frequently used directories
 setopt auto_cd
-cdpath=("$HOME/Sync/42jobs")
+cdpath=("$HOME/Dropbox/42jobs")
 
 # directory stack
 export DIRSTACKSIZE=8
