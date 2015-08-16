@@ -11,8 +11,11 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=2000
 export SAVEHIST=$HISTSIZE
 export GREP_COLOR=31
-export PATH=$PATH:$HOME/bin:$HOME/.gem/ruby/2.2.0/bin
+export PATH=$PATH:$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/.rvm/bin
 export EDITOR="subl -w"
+
+# norminette
+export RBX_PREFIX_PATH=/usr/local/Cellar/rubinius/2.5.8/
 
 # aliases
 alias ls='ls -G'
@@ -114,3 +117,5 @@ source ~/zsh-syntax-highlighting.zsh
 
 # added by travis gem
 [ -f /Users/crenault/.travis/travis.sh ] && source /Users/crenault/.travis/travis.sh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
