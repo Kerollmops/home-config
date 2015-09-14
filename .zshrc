@@ -19,9 +19,9 @@ export RBX_PREFIX_PATH=/usr/local/Cellar/rubinius/2.5.8/
 
 # aliases
 alias ls='ls -G'
-alias ll='ls -G -lah'
+alias ll='ls -G -hAlp'
+alias lll='ll | less'
 alias l='ll'
-alias lll='ls -G -lah | less'
 alias grep='grep --color=auto'
 alias subl='subl'
 alias gs="git status"
