@@ -23,8 +23,8 @@
 	"font_size": 12,
 	"ignored_packages":
 	[
-		"Vintage",
-		"Makefile"
+		"Makefile",
+		"Vintage"
 	],
 	"remember_full_screen": true,
 	"rulers":

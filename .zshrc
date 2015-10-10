@@ -11,11 +11,8 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=2000
 export SAVEHIST=$HISTSIZE
 export GREP_COLOR=31
-export PATH=$PATH:$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/.rvm/bin
-export EDITOR="subl -w"
-
-# norminette
-export RBX_PREFIX_PATH=/usr/local/Cellar/rubinius/2.5.8/
+export PATH="/usr/local/bin:$HOME/.brew/bin:$PATH:$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/.rvm/bin"
+export EDITOR="emacs"
 
 # aliases
 alias ls='ls -G'
@@ -23,7 +20,6 @@ alias ll='ls -G -hAlp'
 alias lll='ll | less'
 alias l='ll'
 alias grep='grep --color=auto'
-alias subl='subl'
 alias gs="git status"
 alias gc="git commit -am"
 alias gp="git push"
@@ -32,7 +28,7 @@ alias coplient="$HOME/home-config/CoplienGenerator/coplien.py"
 
 # frequently used directories
 setopt auto_cd
-cdpath=("$HOME/Dropbox/42jobs")
+cdpath=("$HOME/Documents/42jobs")
 
 # directory stack
 export DIRSTACKSIZE=8
