@@ -1,1 +1,1 @@
-export PATH="$HOME/.brew/bin:$PATH"
+export PATH="/usr/local/bin:$HOME/.brew/bin:$PATH"
