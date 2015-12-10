@@ -24,7 +24,8 @@ alias gs="git status"
 alias gc="git commit -am"
 alias gp="git push"
 alias ga="git add"
-alias st="open -a Sublime\ Text"
+# alias st="open -a Sublime\ Text"
+alias st="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias coplient="$HOME/home-config/CoplienGenerator/coplien.py"
 
 # frequently used directories

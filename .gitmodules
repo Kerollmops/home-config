@@ -4,3 +4,6 @@
 [submodule "CoplienGenerator"]
 	path = CoplienGenerator
 	url = https://github.com/Kerosene2000/CoplienGenerator.git
+[submodule "sublime-settings-installer"]
+	path = sublime-settings-installer
+	url = https://github.com/Kerosene2000/sublime-settings-installer.git
