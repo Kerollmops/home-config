@@ -30,7 +30,7 @@ alias coplient="$HOME/home-config/CoplienGenerator/coplien.py"
 
 # frequently used directories
 setopt auto_cd
-cdpath=("$HOME/Documents/42jobs")
+cdpath=("$HOME/Documents")
 
 # directory stack
 export DIRSTACKSIZE=8
