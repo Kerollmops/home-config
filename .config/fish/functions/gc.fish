@@ -1,3 +1,3 @@
-function ga
+function gc
 	git commit -am $argv
 end
