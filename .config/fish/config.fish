@@ -9,3 +9,6 @@ abbr --add ga="git add"
 # ls
 abbr --add l="ls -la"
 abbr --add ll="ls -la"
+
+# sublime text
+abbr --add st="sublime_text"
