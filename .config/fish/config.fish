@@ -1,5 +1,6 @@
-# PATH
+# ENVIRONNEMENT
 set -x PATH $HOME/.brew/bin $PATH
+set -x HOMEBREW_CACHE $HOME/Library/Caches/Homebrew/Formula
 
 # ALIASES
 
