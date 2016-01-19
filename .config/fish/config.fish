@@ -1,3 +1,6 @@
+# PATH
+set -x PATH $HOME/.brew/bin $PATH
+
 # ALIASES
 
 # git
