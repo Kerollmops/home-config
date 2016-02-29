@@ -16,7 +16,7 @@ export EDITOR="st -w"
 
 # aliases
 alias ls='ls -G'
-alias ll='ls -G -hAlp'
+alias ll='ls -laG -hAlp'
 alias lll='ll | less'
 alias l='ll'
 alias grep='grep --color=auto'
