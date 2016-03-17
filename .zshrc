@@ -11,8 +11,16 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=2000
 export SAVEHIST=$HISTSIZE
 export GREP_COLOR=31
-export PATH="$HOME/.brew/bin:/usr/local/bin:$PATH:$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/.rvm/bin"
-export EDITOR="st -w"
+export PATH="$HOME/.brew/bin:/usr/local/bin:$PATH"
+export PATH="$PATH:$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.meteor"
+export SUBL_PATH="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+export EDITOR="$SUBL_PATH -w"
+
+# brew
+export HOMEBREW_CACHE=/tmp/mycache
+export HOMEBREW_TEMP=/tmp/mytemp
+mkdir -p /tmp/mytemp /tmp/mycache ~/Library/Caches/Homebrew
 
 # aliases
 alias ls='ls -G'
@@ -25,7 +33,7 @@ alias gc="git commit -am"
 alias gp="git push"
 alias ga="git add"
 # alias st="open -a Sublime\ Text"
-alias st="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+alias st="$SUBL_PATH"
 alias coplient="$HOME/home-config/CoplienGenerator/coplien.py"
 
 # frequently used directories

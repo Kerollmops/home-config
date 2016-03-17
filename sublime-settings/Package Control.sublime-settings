@@ -1,0 +1,17 @@
+{
+	"bootstrapped": true,
+	"installed_packages":
+	[
+		"42 Headers",
+		"Makefile Improved",
+		"Monokai - Spacegray",
+		"Package Control",
+		"Rust",
+		"C Improved",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-contrib-clang",
+		"SublimeLinter-contrib-rustc",
+		"Theme - Spacegray"
+	]
+}

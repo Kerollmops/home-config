@@ -1,0 +1,18 @@
+{
+	"color_scheme": "Packages/User/SublimeLinter/base16-eighties.dark (SL).tmTheme",
+	"draw_white_space": "all",
+	"ensure_newline_at_eof_on_save": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"remember_full_screen": true,
+	"rulers":
+	[
+		80
+	],
+	"scroll_past_end": true,
+	"tab_completion": false,
+	"theme": "Spacegray Eighties.sublime-theme",
+	"trim_trailing_white_space_on_save": true
+}
