@@ -24,7 +24,7 @@ mkdir -p /tmp/mytemp /tmp/mycache ~/Library/Caches/Homebrew
 
 # aliases
 alias ls='ls -G'
-alias ll='ls -G -hAlp'
+alias ll='ls -laG -hAlp'
 alias lll='ll | less'
 alias l='ll'
 alias grep='grep --color=auto'

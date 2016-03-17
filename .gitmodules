@@ -7,3 +7,6 @@
 [submodule "sublime-settings-installer"]
 	path = sublime-settings-installer
 	url = https://github.com/Kerosene2000/sublime-settings-installer.git
+[submodule ".emacs.d"]
+	path = .emacs.d
+	url = https://github.com/skeeto/.emacs.d.git
