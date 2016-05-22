@@ -35,10 +35,7 @@ alias ga="git add"
 # alias st="open -a Sublime\ Text"
 alias st="$SUBL_PATH"
 alias coplient="$HOME/home-config/CoplienGenerator/coplien.py"
-
-# frequently used directories
-setopt auto_cd
-cdpath=("$HOME/Documents")
+alias cargo="nocorrect cargo"
 
 # directory stack
 export DIRSTACKSIZE=8
@@ -93,6 +90,7 @@ zle -N edit-command-line
 bindkey "^[e" edit-command-line
 
 # Completion
+# https://github.com/Homebrew/homebrew-completions
 fpath=($HOME/completion $HOME/.brew/share/zsh/site-functions $HOME/.brew/share/zsh-completions $fpath)
 autoload -U compinit
 compinit
