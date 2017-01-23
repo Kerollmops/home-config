@@ -11,11 +11,11 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=2000
 export SAVEHIST=$HISTSIZE
 export GREP_COLOR=31
-export PATH="$HOME/.brew/bin:/usr/local/bin:$PATH"
-export PATH="$PATH:$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/.rvm/bin"
-export PATH="$PATH:$HOME/.meteor"
-export SUBL_PATH="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-export EDITOR="$SUBL_PATH -w"
+export PATH="$HOME/.brew/bin:$PATH" # home brew
+export PATH="$HOME/.cargo/bin:$PATH" # cargo binaries
+export PATH="/usr/local/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+export EDITOR="code --wait" # visual studio code
 
 # brew
 export HOMEBREW_CACHE=/tmp/mycache
@@ -25,25 +25,23 @@ mkdir -p /tmp/mytemp /tmp/mycache ~/Library/Caches/Homebrew
 # aliases
 alias ls='ls -G'
 alias ll='ls -laG -hAlp'
-alias lll='ll | less'
 alias l='ll'
-alias grep='grep --color=auto'
-alias gs="git status"
-alias gc="git commit -am"
+alias grep='rg'
+alias gs="git ls 2> /dev/null && echo; git status"
+alias gc="git commit"
 alias gp="git push"
 alias ga="git add"
-# alias st="open -a Sublime\ Text"
-alias st="$SUBL_PATH"
-alias coplient="$HOME/home-config/CoplienGenerator/coplien.py"
-alias cargo="nocorrect cargo"
 
-# directory stack
-export DIRSTACKSIZE=8
-setopt autopushd pushdminus pushdsilent pushdtohome
+# git config
+git config --global core.editor "code --wait"
+git config --global alias.ls 'log --oneline --decorate --graph -8'
+git config --global alias.la 'log --oneline --decorate --graph --all'
+git config --global alias.ll 'log --oneline --decorate --graph --all -16'
 
-# completion
+# history
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
+setopt hist_reduceblanks
 
 # my prompt
 setopt PROMPT_SUBST
@@ -84,10 +82,18 @@ bindkey '\e[3~' delete-char
 # binding key for history
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
+
 # edit command in emacs
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^[e" edit-command-line
+
+# move word
+bindkey "\e\e[D" backward-word
+bindkey "\e\e[C" forward-word
+
+# bindkey "[^?" backward-delete-word
+# bindkey "^?[C" forward-delete-word
 
 # Completion
 # https://github.com/Homebrew/homebrew-completions
