@@ -13,6 +13,7 @@ export SAVEHIST=$HISTSIZE
 export GREP_COLOR=31
 export PATH="$HOME/.brew/bin:$PATH" # home brew
 export PATH="$HOME/.cargo/bin:$PATH" # cargo binaries
+export PATH="$HOME/.nix-profile/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export EDITOR="code --wait" # visual studio code
