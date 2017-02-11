@@ -1,10 +1,4 @@
 #!/usr/bin/env zsh
-#   _________  _   _ ____   ____
-#  |__  / ___|| | | |  _ \ / ___|
-#    / /\___ \| |_| | |_) | |
-# _ / /_ ___) |  _  |  _ <| |___
-#(_)____|____/|_| |_|_| \_\\____|
-#
 
 # env variables
 export HISTFILE=~/.zsh_history
@@ -13,6 +7,7 @@ export SAVEHIST=$HISTSIZE
 export GREP_COLOR=31
 export PATH="$HOME/.brew/bin:$PATH" # home brew
 export PATH="$HOME/.cargo/bin:$PATH" # cargo binaries
+export PATH="$HOME/.cabal/bin:$PATH" # cabal binaries
 export PATH="$HOME/.nix-profile/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
@@ -28,12 +23,15 @@ export OPENSSL_INCLUDE_DIR=$(brew --prefix openssl)/include
 export OPENSSL_LIB_DIR=$(brew --prefix openssl)/lib
 export DEP_OPENSSL_INCLUDE=$(brew --prefix openssl)/include
 
+# Rust racer
+export RUST_SRC_PATH="$HOME/Documents/rust"
+
 # aliases
 alias ls='ls -G'
 alias ll='ls -laG -hAlp'
 alias l='ll'
 alias grep='rg'
-alias gs="git ls 2> /dev/null && echo; git status"
+alias gs="git log --oneline --decorate -8 2> /dev/null && echo; git status"
 alias gc="git commit"
 alias gp="git push"
 alias ga="git add"
@@ -43,6 +41,15 @@ git config --global core.editor "code --wait"
 git config --global alias.ls 'log --oneline --decorate --graph -8'
 git config --global alias.la 'log --oneline --decorate --graph --all'
 git config --global alias.ll 'log --oneline --decorate --graph --all -16'
+
+function swap_buffer {
+	local tmp_buffer=$SWAP_BUFFER
+	SWAP_BUFFER=$BUFFER
+	BUFFER=$tmp_buffer
+}
+
+zle -N swap_buffer
+bindkey '^B' swap_buffer
 
 # history
 setopt hist_ignore_all_dups
