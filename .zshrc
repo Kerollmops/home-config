@@ -24,11 +24,11 @@ export OPENSSL_LIB_DIR=$(brew --prefix openssl)/lib
 export DEP_OPENSSL_INCLUDE=$(brew --prefix openssl)/include
 
 # Rust racer
-export RUST_SRC_PATH="$HOME/Documents/rust"
+export RUST_SRC_PATH="$HOME/Documents/rust/src"
 
 # aliases
 alias ls='ls -G'
-alias ll='ls -laG -hAlp'
+alias ll='ls -lAG -hpt'
 alias l='ll'
 alias grep='rg'
 alias gs="git log --oneline --decorate -8 2> /dev/null && echo; git status"
@@ -50,6 +50,7 @@ function swap_buffer {
 
 zle -N swap_buffer
 bindkey '^B' swap_buffer
+bindkey '^N' beep
 
 # history
 setopt hist_ignore_all_dups
