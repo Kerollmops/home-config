@@ -5,13 +5,8 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=2000
 export SAVEHIST=$HISTSIZE
 export GREP_COLOR=31
-export PATH="$HOME/.brew/bin:$PATH" # home brew
-export PATH="$HOME/.cargo/bin:$PATH" # cargo binaries
-export PATH="$HOME/.cabal/bin:$PATH" # cabal binaries
-export PATH="$HOME/.nix-profile/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/.bin:$PATH"
 export EDITOR="code --wait" # visual studio code
+export RLS_ROOT="$HOME/Documents/rls"
 
 # brew
 export HOMEBREW_CACHE=/tmp/mycache
@@ -23,18 +18,21 @@ export OPENSSL_INCLUDE_DIR=$(brew --prefix openssl)/include
 export OPENSSL_LIB_DIR=$(brew --prefix openssl)/lib
 export DEP_OPENSSL_INCLUDE=$(brew --prefix openssl)/include
 
-# Rust racer
-export RUST_SRC_PATH="$HOME/Documents/rust/src"
+# Rust
+export CARGO_INCREMENTAL=1
 
 # aliases
-alias ls='ls -G'
-alias ll='ls -lAG -hpt'
+alias ls='exa'
+alias ll='exa -la --git'
 alias l='ll'
 alias grep='rg'
 alias gs="git log --oneline --decorate -8 2> /dev/null && echo; git status"
 alias gc="git commit"
 alias gp="git push"
 alias ga="git add"
+
+# cdpath
+export CDPATH="$HOME/Documents"
 
 # git config
 git config --global core.editor "code --wait"
@@ -60,14 +58,16 @@ setopt hist_reduceblanks
 # my prompt
 setopt PROMPT_SUBST
 function git_branch {
-	local branch=$(git symbolic-ref -q --short HEAD 2> /dev/null)
+	local branch=$(git name-rev $(git rev-parse --short HEAD 2> /dev/null) 2> /dev/null)
 	if [[ ! -z $branch ]] then
 		echo $branch" "
 	fi
 }
+
 function get_pwd {
 	echo "%20<...<%c%<<"
 }
+
 function need_commit {
 	if [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] then
 		echo "%F{red};%f"
@@ -77,7 +77,6 @@ function need_commit {
 }
 export PROMPT='%F{red}%(?..%? )'\
 '%F{white}%B%(2L.+ .)%(1j.[%j] .)'\
-'%F{cyan}%m:%f '\
 '%F{green}$(git_branch)'\
 '%F{yellow}$(get_pwd)%f'\
 '$(need_commit) %b'
@@ -142,3 +141,5 @@ source ~/zsh-syntax-highlighting.zsh
 
 # added by travis gem
 [ -f /Users/crenault/.travis/travis.sh ] && source /Users/crenault/.travis/travis.sh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

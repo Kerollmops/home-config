@@ -1,1 +1,5 @@
-export PATH="/usr/local/bin:$HOME/.cargo/bin:$HOME/.brew/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.cabal/bin:$PATH"
+export PATH="$HOME/.brew/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.nix-profile/bin:$PATH"
